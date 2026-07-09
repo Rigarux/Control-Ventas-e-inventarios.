@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
+    port: 5173,
+    strictPort: true, // Si 5173 está ocupado, Vite dará error en lugar de usar otro puerto al azar
     allowedHosts: ['ventas.rigaru.online', 'rigaru.online'],
     proxy: {
       '/api': {
